@@ -1,0 +1,6 @@
+body{
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+    color: #5b44ba;}
