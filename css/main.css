@@ -4,3 +4,11 @@ body{
     flex-wrap: wrap;
     font-family: sans-serif;
     color: #5b44ba;}
+
+    .button{
+        width: 20vw;
+        height: 10vw;
+        border: 1px solid black;
+        border-radius: 30vw;
+        background-color: blueviolet;
+    }
