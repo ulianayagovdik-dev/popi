@@ -70,21 +70,105 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     // Задача 1. Урок 3
-    let but = document.querySelectorAll(".button");
-    but.forEach(function(button){
-        button.addEventListener("click", function (){
-            if(button.style.backgroundColor === "blueviolet"){
-                button.style.backgroundColor = "pink";
-                button.style.margin = "20vw";
-                console.log("изменение цвета и внешнего отступа")
-            }
-            else{
-                button.style.backgroundColor = "blueviolet"
-                button.style.margin = "10vw";
-                console.log ("цвет не поменялся")
-            }
-        })
-    })
+    // let but = document.querySelectorAll(".button");
+    // but.forEach(function(button){
+    //     button.addEventListener("click", function (){
+    //         if(button.style.backgroundColor === "blueviolet"){
+    //             button.style.backgroundColor = "pink";
+    //             button.style.margin = "20vw";
+    //             console.log("изменение цвета и внешнего отступа")
+    //         }
+    //         else{
+    //             button.style.backgroundColor = "blueviolet"
+    //             button.style.margin = "10vw";
+    //             console.log ("цвет не поменялся")
+    //         }
+    //     })
+    // })
+
+
+
+
+    // задача 1. урок 4
+    let bu = 0
+    let Butt = document.querySelector(".button1");
+    let forPco = document.querySelector(".pCo");
+    let txtt = ("Вы достигли максимального количества кликов");
+
+    Butt.addEventListener("click", function(){
+            bu++;
+            forPco.textContent = bu;
+        if(bu === 15){
+        Butt.disabled = true
+        alert(txtt);
+     }
+    });
+
+
+    // задача 2. урок 4
+
+    let t = 10;
+    let timerr = document.querySelector(".timer");
+    let forTimer = document.querySelector(".forTimer");
+    let time = null;
+
+    function startTimer(){
+        clearInterval(time);
+        t = 10;
+        timerr.textContent = t;
+
+
+    time = setInterval(function(){
+        t--;
+        timerr.textContent = t;
+    
+        if (t <= 0){
+            clearInterval(time);
+            alert("Время вышло");
+        }
+        }, 1000);
+    }
+        forTimer.addEventListener("click", startTimer);
+
+
+
+    // задача 3. урок 4
+        let v = 0;
+        let tic;
+
+        const sta = document.querySelector(".st")
+        const sto = document.querySelector(".sp")
+        const reset = document.querySelector(".res")
+        const clo = document.querySelector(".clock")
+
+
+
+        function startTimer(){
+            clearInterval(tic);
+            v = 0;
+            clo.textContent = v;
+
+
+            tic = setInterval(function(){
+            v++;
+            clo.textContent = v;
+        }, 1000)
+    }
+
+sto.addEventListener("click", function () {
+    clearInterval(tic);
+});
+
+reset.addEventListener("click", function () {
+    clearInterval(tic);
+    v = 0;
+    clo.textContent = v;
+});
+
+
+
+
+
 
 
 });
