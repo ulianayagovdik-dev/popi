@@ -108,8 +108,8 @@ document.addEventListener("DOMContentLoaded", function(){
     // задача 2. урок 4
 
       let count = 10;
-      const display = document.getElementById('timer');
-      const resetButton = document.getElementById('forTimer');
+      const display = document.querySelector('.timer');
+      const resetButton = document.querySelector('.forTimer');
       let interval;
 
       function startTimer() {
@@ -135,44 +135,43 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-
     
        
 
 
 
     // задача 3. урок 4
-        let v = 0;
-        let tic;
+//         let v = 0;
+//         let tic;
 
-        const sta = document.querySelector(".st")
-        const sto = document.querySelector(".sp")
-        const reset = document.querySelector(".res")
-        const clo = document.querySelector(".clock")
-
-
-
-        function startTimer(){
-            clearInterval(tic);
-            v = 0;
-            clo.textContent = v;
+//         const sta = document.querySelector(".st")
+//         const sto = document.querySelector(".sp")
+//         const reset = document.querySelector(".res")
+//         const clo = document.querySelector(".clock")
 
 
-            tic = setInterval(function(){
-            v++;
-            clo.textContent = v;
-        }, 1000)
-    }
 
-sto.addEventListener("click", function () {
-    clearInterval(tic);
-});
+//         function startTimer(){
+//             clearInterval(tic);
+//             v = 0;
+//             clo.textContent = v;
 
-reset.addEventListener("click", function () {
-    clearInterval(tic);
-    v = 0;
-    clo.textContent = v;
-});
+
+//             tic = setInterval(function(){
+//             v++;
+//             clo.textContent = v;
+//         }, 1000)
+//     }
+
+// sto.addEventListener("click", function () {
+//     clearInterval(tic);
+// });
+
+// reset.addEventListener("click", function () {
+//     clearInterval(tic);
+//     v = 0;
+//     clo.textContent = v;
+// });
 
 
 
