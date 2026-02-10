@@ -107,31 +107,32 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // задача 2. урок 4
 
-    let t = 10;
-    const timerr = document.querySelector(".timer");
-    const forTimer = document.querySelector(".forTimer");
-    let time;
+      let count = 10;
+      const display = document.getElementById('timer');
+      const resetButton = document.getElementById('forTimer');
+      let interval;
 
-    function startTimer(){
-        time = setInterval(function(){
-        t--;
-        timerr.textContent = t;
-    
-        if (t <= 0){
-            clearInterval(time);
-            timerr.textContent = "Время вышло!";
-        }
+      function startTimer() {
+        interval = setInterval(function () {
+          count--;
+          display.textContent = count;
+
+          if (count <= 0) {
+            clearInterval(interval);
+            display.textContent = "Время вышло!";
+          }
         }, 1000);
-    }
+      }
 
-         forTimer.addEventListener("click", function(){
-            clearInterval(time);
-            t = 10;
-            timerr.textContent = t;
-            startTimer();
-         });
+      resetButton.addEventListener('click', function () {
+        clearInterval(interval);
+        count = 10;
+        display.textContent = count;
+        startTimer();
+      });
 
-         startTimer();
+      startTimer();
+
 
 
 
