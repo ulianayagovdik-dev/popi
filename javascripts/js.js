@@ -135,48 +135,35 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-    
+          // задача 3. урок 4
+        let v = 0;
+        let tic = null;
+
+        let sta = document.querySelector(".st")
+        let sto = document.querySelector(".sp")
+        let reset = document.querySelector(".res")
+        let clo = document.querySelector(".clock")
+
+         sta.addEventListener("click", function() {
+            if (!tic) {
+                tic = setInterval(function() {
+                v++;
+                clo.textContent = v;
+        }, 1000);
+            }
+         });
+
+           sto.addEventListener("click", function() {
+        clearInterval(tic);
+        tic = null;
+        });
        
-
-
-
-    // задача 3. урок 4
-//         let v = 0;
-//         let tic;
-
-//         const sta = document.querySelector(".st")
-//         const sto = document.querySelector(".sp")
-//         const reset = document.querySelector(".res")
-//         const clo = document.querySelector(".clock")
-
-
-
-//         function startTimer(){
-//             clearInterval(tic);
-//             v = 0;
-//             clo.textContent = v;
-
-
-//             tic = setInterval(function(){
-//             v++;
-//             clo.textContent = v;
-//         }, 1000)
-//     }
-
-// sto.addEventListener("click", function () {
-//     clearInterval(tic);
-// });
-
-// reset.addEventListener("click", function () {
-//     clearInterval(tic);
-//     v = 0;
-//     clo.textContent = v;
-// });
-
-
-
-
-
+        reset.addEventListener("click", function() {
+        clearInterval(tic);
+        tic = null;
+        v = 0;
+        clo.textContent = v;
+    });
 
 
 });
